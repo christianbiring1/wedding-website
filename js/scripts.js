@@ -235,6 +235,32 @@ $(document).ready(function () {
         }
     });
 
+    // $('.card').click(function() {
+    //     $(this).toggleClass('flipped');
+    // });
+
+    // $('.tab-btn').click(function() {
+    //     $('.tab-btn').removeClass('active');
+    //     $(this).addClass('active');
+        
+    //     var tabId = $(this).data('tab');
+    //     $('.tab-pane').removeClass('active');
+    //     $('#' + tabId).addClass('active');
+    // });
+
+    $('.card').each(function(index) {
+        $(this).css('animation-delay', (index * 0.1) + 's');
+    });
+
+    $('.card').hover(
+        function() {
+            $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+        },
+        function() {
+            $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+        }
+    );
+
 });
 
 /********************** Extras **********************/
