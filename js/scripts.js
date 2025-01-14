@@ -261,6 +261,41 @@ $(document).ready(function () {
         }
     );
 
+    function loadTranslations(lang) {
+        // $.getJSON(`${lang}.json`, function (translations) {
+        //   applyTranslations(translations);
+        // });
+        $.getJSON(lang + ".json", function (translations) {
+            applyTranslations(translations);
+          });
+      }
+      
+      function applyTranslations(translations) {
+        $("[data-i18n]").each(function () {
+          var key = $(this).data("i18n");
+          if (translations[key]) {
+            $(this).text(translations[key]);
+          }
+        });
+      }
+
+      $(".lang-switch").on("click", function () {
+        var lang = $(this).data("lang");
+        loadTranslations(lang);
+      });
+
+    var defaultLang = navigator.language.slice(0, 2) || "en";
+    loadTranslations(defaultLang);
+
+
+    $(".lang-switch").on("click", function () {
+        var lang = $(this).data("lang");
+        localStorage.setItem("preferredLang", lang);
+        loadTranslations(lang);
+      });
+
+    var savedLang = localStorage.getItem("preferredLang") || "en";
+    loadTranslations(savedLang);
 });
 
 /********************** Extras **********************/
