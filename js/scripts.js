@@ -296,6 +296,19 @@ $(document).ready(function () {
 
     var savedLang = localStorage.getItem("preferredLang") || "en";
     loadTranslations(savedLang);
+
+     // Set initial active state
+     $('.lang-switch[data-lang="en"]').addClass('active');
+
+     // Handle language switching
+     $('.lang-switch').click(function() {
+         $('.lang-switch').removeClass('active');
+         $(this).addClass('active');
+         
+         var selectedLang = $(this).data('lang');
+         // Add your language switching logic here
+         console.log('Switching to: ' + selectedLang);
+     });
 });
 
 /********************** Extras **********************/
