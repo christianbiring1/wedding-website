@@ -235,13 +235,86 @@ $(document).ready(function () {
         }
     });
 
+    // $('.card').click(function() {
+    //     $(this).toggleClass('flipped');
+    // });
+
+    // $('.tab-btn').click(function() {
+    //     $('.tab-btn').removeClass('active');
+    //     $(this).addClass('active');
+        
+    //     var tabId = $(this).data('tab');
+    //     $('.tab-pane').removeClass('active');
+    //     $('#' + tabId).addClass('active');
+    // });
+
+    $('.card').each(function(index) {
+        $(this).css('animation-delay', (index * 0.1) + 's');
+    });
+
+    $('.card').hover(
+        function() {
+            $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+        },
+        function() {
+            $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+        }
+    );
+
+    function loadTranslations(lang) {
+        // $.getJSON(`${lang}.json`, function (translations) {
+        //   applyTranslations(translations);
+        // });
+        $.getJSON(lang + ".json", function (translations) {
+            applyTranslations(translations);
+          });
+      }
+      
+      function applyTranslations(translations) {
+        $("[data-i18n]").each(function () {
+          var key = $(this).data("i18n");
+          if (translations[key]) {
+            $(this).text(translations[key]);
+          }
+        });
+      }
+
+      $(".lang-switch").on("click", function () {
+        var lang = $(this).data("lang");
+        loadTranslations(lang);
+      });
+
+    var defaultLang = navigator.language.slice(0, 2) || "en";
+    loadTranslations(defaultLang);
+
+
+    $(".lang-switch").on("click", function () {
+        var lang = $(this).data("lang");
+        localStorage.setItem("preferredLang", lang);
+        loadTranslations(lang);
+      });
+
+    var savedLang = localStorage.getItem("preferredLang") || "en";
+    loadTranslations(savedLang);
+
+     // Set initial active state
+     $('.lang-switch[data-lang="en"]').addClass('active');
+
+     // Handle language switching
+     $('.lang-switch').click(function() {
+         $('.lang-switch').removeClass('active');
+         $(this).addClass('active');
+         
+         var selectedLang = $(this).data('lang');
+         // Add your language switching logic here
+         console.log('Switching to: ' + selectedLang);
+     });
 });
 
 /********************** Extras **********************/
-
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var location = {lat: -2.499962, lng: 28.867746};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
