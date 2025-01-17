@@ -248,6 +248,8 @@ $(document).ready(function () {
         }
     });
 
+    // ------------------------------ CARD FLIPPING -----------------------
+
     // $('.card').each(function(index) {
     //     $(this).css('animation-delay', (index * 0.1) + 's');
     // });
@@ -260,6 +262,8 @@ $(document).ready(function () {
     //         $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
     //     }
     // );
+
+    // ---------------------- TRANSLATION FUNCTIONALITY -------------------------------
 
     function loadTranslations(lang) {
         // $.getJSON(`${lang}.json`, function (translations) {
@@ -309,6 +313,33 @@ $(document).ready(function () {
          // Add your language switching logic here
          console.log('Switching to: ' + selectedLang);
      });
+
+    //  -------------------------------- DRESS CODE IMAGES VIEWER --------------------------
+
+    // Initialize FancyBox
+//   $('[data-fancybox="gallery"]').fancybox({
+//     buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'], // FancyBox buttons
+//     loop: true, // Allow navigation to loop
+//   });
+
+//   // Button click to open the first image
+//   $('#view-images').on('click', function () {
+//     // Trigger click on the first image
+//     $('.images a:first').trigger('click');
+//   });
+
+// Initialize FancyBox with navigation enabled
+$('[data-fancybox="gallery"]').fancybox({
+    buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'], // Optional buttons
+    loop: true, // Enable looping between images
+    arrows: true, // Ensure next/prev arrows are enabled
+    infobar: true, // Show the image count
+  });
+
+  // Button click to open the gallery starting from the first image
+  $('#view-images').on('click', function () {
+    $('.images a:first').trigger('click'); // Open the first image in the gallery
+  });
 });
 
 /********************** Extras **********************/

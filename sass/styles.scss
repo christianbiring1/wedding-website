@@ -278,7 +278,7 @@ Hero
   min-height: 750px;
   background: url("../img/hero-img.jpg") center center;
   background-repeat: no-repeat;
-  background-position-y: -130px;
+  // background-position-y: -130px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -288,7 +288,10 @@ Hero
   .rsvp-btn {
     color: #C67D48;
     border-color: #C67D48;
-    margin-top: -30rem;
+
+    @media screen and (min-width: 768px){
+      margin-top: -30rem;
+    }
   }
 
   .rsvp-btn:hover, .rsvp-btn:focus {
@@ -321,8 +324,20 @@ Hero
     padding-top: 40%;
   }
   .hero-content img {
-    width: 55%;
-    margin-bottom: 12%;
+    // width: 55%;
+    // margin-bottom: 12%;
+    position: relative;
+    margin-top: -27rem;
+    min-width: 100%;
+
+    @media screen and (min-width: 768px){
+      min-width: 0;
+      margin-top: -27px;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    background-position-y: -100px;
   }
 }
 .navigation {
@@ -1122,12 +1137,23 @@ body.modal-open {
     padding-right: 10px;
 }
 
+/* Hide the scrollbar by default */
 .content-scroll::-webkit-scrollbar {
-    width: 5px;
+  width: 0;
 }
+
+/* Show the scrollbar when the user hovers over the card */
+.content-scroll:hover::-webkit-scrollbar {
+  width: 5px;
+}
+
+// .content-scroll::-webkit-scrollbar {
+//     width: 5px;
+// }
 
 .content-scroll::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
+    opacity: .5;
     border-radius: 10px;
 }
 
@@ -1178,4 +1204,20 @@ body.modal-open {
 
 .card {
     animation: fadeIn 0.5s ease-out;
+}
+
+
+.dress-code {
+  text-align: center;
+  margin: 20px;
+}
+.dress-code button {
+  padding: 10px 20px;
+  background-color: $accent-color;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.dress-code button:hover {
+  background-color: $accent-color-hover;
 }
