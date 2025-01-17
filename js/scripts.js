@@ -160,7 +160,20 @@ $(document).ready(function () {
         share_bar[i].innerHTML = html;
         share_bar[i].style.display = 'inline-block';
     }
-
+    // flex: 1;
+    //         min-width: 300px;
+    //         max-width: 500px;
+    //         height: 400px;
+    //         border-radius: 20px;
+    //         background: linear-gradient(135deg, #6c5ce7, #00a8ff);
+    //         padding: 2rem;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         align-items: center;
+    //         cursor: pointer;
+    //         transition: all 0.3s ease;
+    //         box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
 
@@ -235,31 +248,22 @@ $(document).ready(function () {
         }
     });
 
-    // $('.card').click(function() {
-    //     $(this).toggleClass('flipped');
+    // ------------------------------ CARD FLIPPING -----------------------
+
+    // $('.card').each(function(index) {
+    //     $(this).css('animation-delay', (index * 0.1) + 's');
     // });
 
-    // $('.tab-btn').click(function() {
-    //     $('.tab-btn').removeClass('active');
-    //     $(this).addClass('active');
-        
-    //     var tabId = $(this).data('tab');
-    //     $('.tab-pane').removeClass('active');
-    //     $('#' + tabId).addClass('active');
-    // });
+    // $('.card').hover(
+    //     function() {
+    //         $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+    //     },
+    //     function() {
+    //         $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+    //     }
+    // );
 
-    $('.card').each(function(index) {
-        $(this).css('animation-delay', (index * 0.1) + 's');
-    });
-
-    $('.card').hover(
-        function() {
-            $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
-        },
-        function() {
-            $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
-        }
-    );
+    // ---------------------- TRANSLATION FUNCTIONALITY -------------------------------
 
     function loadTranslations(lang) {
         // $.getJSON(`${lang}.json`, function (translations) {
@@ -309,6 +313,33 @@ $(document).ready(function () {
          // Add your language switching logic here
          console.log('Switching to: ' + selectedLang);
      });
+
+    //  -------------------------------- DRESS CODE IMAGES VIEWER --------------------------
+
+    // Initialize FancyBox
+//   $('[data-fancybox="gallery"]').fancybox({
+//     buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'], // FancyBox buttons
+//     loop: true, // Allow navigation to loop
+//   });
+
+//   // Button click to open the first image
+//   $('#view-images').on('click', function () {
+//     // Trigger click on the first image
+//     $('.images a:first').trigger('click');
+//   });
+
+// Initialize FancyBox with navigation enabled
+$('[data-fancybox="gallery"]').fancybox({
+    buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'], // Optional buttons
+    loop: true, // Enable looping between images
+    arrows: true, // Ensure next/prev arrows are enabled
+    infobar: true, // Show the image count
+  });
+
+  // Button click to open the gallery starting from the first image
+  $('#view-images').on('click', function () {
+    $('.images a:first').trigger('click'); // Open the first image in the gallery
+  });
 });
 
 /********************** Extras **********************/
