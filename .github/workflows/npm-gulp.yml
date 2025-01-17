@@ -1,4 +1,4 @@
-name: NodeJS with Gul
+name: Deploy to Github action
 on:
   push:
     branches: [ "master" ]
