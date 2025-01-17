@@ -275,13 +275,29 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 1700px;
+  min-height: 750px;
   background: url("../img/hero-img.jpg") center center;
+  background-repeat: no-repeat;
+  background-position-y: -130px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+
+  .rsvp-btn {
+    color: #C67D48;
+    border-color: #C67D48;
+    margin-top: -30rem;
+  }
+
+  .rsvp-btn:hover, .rsvp-btn:focus {
+    color: #fff;
+    border-color: #C67D48;
+    background-color: #C67D48;
+  }
+
+
 
   /*.rsvp-btn {
     position: absolute;
@@ -975,10 +991,11 @@ body.modal-open {
 // @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #5992A6;
+    // --primary-color: #5992A6;
     // --primary-color: #6c5ce7;
-    --secondary-color: #9CB8C2;
-    // --secondary-color: #00a8ff;
+    --primary-color: #252748;
+    // --secondary-color: #9CB8C2;
+    --secondary-color: #414C79;
     --text-color: #333;
     // --text-color: #2E3256;
     --background-color: #f0f5f9;
@@ -1003,7 +1020,9 @@ body.modal-open {
     padding: 2rem;
 }
 .main-title {
-    font-family: 'Playfair Display', serif;
+    // font-family: 'Playfair Display', serif;
+    // font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -1025,7 +1044,9 @@ body.modal-open {
 .card {
     background-color: var(--card-background);
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+
     perspective: 1000px;
     height: 400px;
         
@@ -1039,14 +1060,10 @@ body.modal-open {
     transform-style: preserve-3d;
 }
 
-// .card:hover {
+// .card:hover .card-inner {
+//   transform: rotateY(180deg);
+//   box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
 // }
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-  // transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
-}
 
 .card-front, .card-back {
     position: absolute;
@@ -1062,24 +1079,22 @@ body.modal-open {
     font-family: 'Raleway';
 }
 
-.card-front {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    // flex: 1;
-    //         min-width: 300px;
-    //         max-width: 500px;
-    //         height: 400px;
-    //         border-radius: 20px;
-    //         background: linear-gradient(135deg, #6c5ce7, #00a8ff);
-    //         padding: 2rem;
-    //         display: flex;
-    //         flex-direction: column;
-    //         justify-content: center;
-    //         align-items: center;
-    //         cursor: pointer;
-    //         transition: all 0.3s ease;
-    //         box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+.card-content {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    // backface-visibility: hidden;
 }
+
+// .card-front {
+//     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+//     color: white;
+// }
 
 .card-back {
     background-color: var(--card-background);
@@ -1088,15 +1103,11 @@ body.modal-open {
 }
 
 .card h2 {
-    // font-family: 'Playfair Display', serif;
-    // font-size: 1.8rem;
-    // margin-bottom: 1rem;
-    // text-align: center;
-    color: white;
-            // font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-align: center;
+  color: var(--primary-color);
+// font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .card-front p {

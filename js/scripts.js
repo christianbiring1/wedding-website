@@ -160,7 +160,20 @@ $(document).ready(function () {
         share_bar[i].innerHTML = html;
         share_bar[i].style.display = 'inline-block';
     }
-
+    // flex: 1;
+    //         min-width: 300px;
+    //         max-width: 500px;
+    //         height: 400px;
+    //         border-radius: 20px;
+    //         background: linear-gradient(135deg, #6c5ce7, #00a8ff);
+    //         padding: 2rem;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         align-items: center;
+    //         cursor: pointer;
+    //         transition: all 0.3s ease;
+    //         box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
 
@@ -235,31 +248,18 @@ $(document).ready(function () {
         }
     });
 
-    // $('.card').click(function() {
-    //     $(this).toggleClass('flipped');
+    // $('.card').each(function(index) {
+    //     $(this).css('animation-delay', (index * 0.1) + 's');
     // });
 
-    // $('.tab-btn').click(function() {
-    //     $('.tab-btn').removeClass('active');
-    //     $(this).addClass('active');
-        
-    //     var tabId = $(this).data('tab');
-    //     $('.tab-pane').removeClass('active');
-    //     $('#' + tabId).addClass('active');
-    // });
-
-    $('.card').each(function(index) {
-        $(this).css('animation-delay', (index * 0.1) + 's');
-    });
-
-    $('.card').hover(
-        function() {
-            $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
-        },
-        function() {
-            $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
-        }
-    );
+    // $('.card').hover(
+    //     function() {
+    //         $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+    //     },
+    //     function() {
+    //         $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+    //     }
+    // );
 
     function loadTranslations(lang) {
         // $.getJSON(`${lang}.json`, function (translations) {
