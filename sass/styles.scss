@@ -366,6 +366,33 @@ Hero
     height: 980px;
   }
 }
+
+.bible-verse {
+  color: white;
+  // padding: 1rem 1rem;
+
+  .verse-container {
+    background-color: #000;
+    margin: 0.5rem;
+    padding: 1rem;
+
+    @media screen and (min-width: 768px) {
+      // max-width: 700px;
+      margin: 0 auto;
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  p {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+}
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;

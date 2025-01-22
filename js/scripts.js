@@ -370,18 +370,6 @@ $(document).ready(function () {
 
   //  -------------------------------- DRESS CODE IMAGES VIEWER --------------------------
 
-  // Initialize FancyBox
-  //   $('[data-fancybox="gallery"]').fancybox({
-  //     buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'], // FancyBox buttons
-  //     loop: true, // Allow navigation to loop
-  //   });
-
-  //   // Button click to open the first image
-  //   $('#view-images').on('click', function () {
-  //     // Trigger click on the first image
-  //     $('.images a:first').trigger('click');
-  //   });
-
   // Initialize FancyBox with navigation enabled
   $('[data-fancybox="gallery"]').fancybox({
     buttons: ["slideShow", "fullScreen", "thumbs", "close"], // Optional buttons
@@ -393,6 +381,17 @@ $(document).ready(function () {
   // Button click to open the gallery starting from the first image
   $("#view-images").on("click", function () {
     $(".images a:first").trigger("click"); // Open the first image in the gallery
+  });
+
+  $('[data-fancybox-w="women-gallery"]').fancybox({
+    buttons: ["slideShow", "fullScreen", "thumbs", "close"], // Optional buttons
+    loop: true, // Enable looping between images
+    arrows: true, // Ensure next/prev arrows are enabled
+    infobar: true, // Show the image count
+  });
+
+  $("#view-images-women").on("click", function () {
+    $(".images-women a:first").trigger("click"); // Open the first image in the gallery
   });
 });
 

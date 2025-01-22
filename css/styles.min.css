@@ -436,6 +436,29 @@ section .header {
     height: 980px;
   }
 }
+.bible-verse {
+  color: #fff;
+}
+.bible-verse .verse-container {
+  background-color: #000;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .bible-verse .verse-container {
+    margin: 0 auto;
+  }
+  .bible-verse .verse-container p {
+    font-size: 18px;
+  }
+}
+.bible-verse p {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;
