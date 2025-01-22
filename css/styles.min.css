@@ -485,6 +485,11 @@ header ul.primary-nav li a {
 header ul.primary-nav li a:hover {
   color: #cc742f;
 }
+@media screen and (max-width: 768px) {
+  header ul.primary-nav li a {
+    font-size: 18px;
+  }
+}
 header ul.primary-nav li:last-child a {
   padding-right: 0px;
 }
@@ -496,6 +501,15 @@ header ul.member-actions li a div {
 }
 header ul.member-actions li a div:hover {
   color: #cc742f;
+}
+@media screen and (max-width: 768px) {
+  header ul.member-actions {
+    display: flex;
+    flex-direction: column;
+  }
+  header ul.member-actions li {
+    margin: 0;
+  }
 }
 header .header-nav {
   display: inline-block;
@@ -542,6 +556,20 @@ header .member-actions {
 .lang-switch:hover:not(.active) {
   background: rgba(255, 255, 255, 0.05);
 }
+.meet {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+}
+.meet p {
+  text-align: justify;
+}
+@media screen and (min-width: 768px) {
+  .meet {
+    flex-direction: row;
+  }
+}
 .share-bar {
   margin-top: 20px;
 }
@@ -562,14 +590,14 @@ header .member-actions {
   width: 80%;
 }
 #intro {
-  padding-top: 40px;
+  padding-top: 0px;
 }
 #intro img {
   width: 100%;
   height: auto;
 }
 #intro p {
-  text-align: center;
+  text-align: justify;
 }
 .features {
   position: relative;

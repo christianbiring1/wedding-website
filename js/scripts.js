@@ -333,7 +333,7 @@ $(document).ready(function () {
     $("[data-i18n]").each(function () {
       var key = $(this).data("i18n");
       if (translations[key]) {
-        $(this).content(translations[key]);
+        $(this).html(translations[key]);
       }
     });
   }

@@ -416,6 +416,9 @@ header {
         &:hover {
           color: $accent-color;
         }
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+        }
       }
       &:last-child a {
         padding-right: 0px;
@@ -432,6 +435,15 @@ header {
         &:hover {
           color: $accent-color;
         }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin: 0;
       }
     }
   }
@@ -487,6 +499,21 @@ header {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.meet {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+
+  p {
+    text-align: justify;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
 /* ==========================================================================
 Social share buttons
 ========================================================================== */
@@ -515,14 +542,15 @@ Intro
 }
 
 #intro {
-  padding-top: 40px;
+  // padding-top: 40px;
+  padding-top: 0px;
   img {
     width: 100%;
     height: auto;
   }
 }
 #intro p {
-  text-align: center;
+  text-align: justify;
 }
 
 /* ==========================================================================
