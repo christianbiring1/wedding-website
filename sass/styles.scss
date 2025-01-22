@@ -275,10 +275,13 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url("../img/hero-img.jpg") center center;
+  min-height: 266px;
+  height: 450px;
+  width: 140%;
+  background: url(../img/hero-img.jpg) right center;
   background-repeat: no-repeat;
-  // background-position-y: -130px;
+  background-position-y: 0px;
+  background-position-x: -75px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -286,8 +289,9 @@ Hero
   position: relative;
 
   .rsvp-btn {
-    color: #c67d48;
+    color: #fff;
     border-color: #c67d48;
+    background-color: #c67d48;
 
     @media screen and (min-width: 768px) {
       margin-top: -30rem;
@@ -297,15 +301,10 @@ Hero
   .rsvp-btn:hover,
   .rsvp-btn:focus {
     color: #fff;
-    border-color: #c67d48;
+    border-color: rgba(198, 125, 72, 0.7);
     background-color: #c67d48;
   }
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
   .down-arrow a {
     color: $txt-light;
   }
@@ -321,19 +320,78 @@ Hero
   }
   .hero-content {
     padding-top: 40%;
+    position: relative;
   }
   .hero-content img {
-    width: 75%;
-    margin-bottom: 12%;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 70%;
 
     @media screen and (min-width: 768px) {
       min-width: 0;
-      margin-top: -27px;
+      // margin-top: -27px;
+      margin-top: -117px;
+      position: relative;
+      top: unset;
+      left: unset;
+      width: 65%;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-top: 129px;
+      left: 41px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-top: 30px;
     }
   }
 
   @media screen and (min-width: 768px) {
+    min-height: 610px;
+    height: 610px;
+    width: 100%;
+    background: url("../img/hero-img.jpg") center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
     background-position-y: -100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 750px;
+    height: 980px;
+  }
+}
+
+.bible-verse {
+  color: white;
+  // padding: 1rem 1rem;
+
+  .verse-container {
+    background-color: #000;
+    margin: 0.5rem;
+    padding: 1rem;
+
+    @media screen and (min-width: 768px) {
+      // max-width: 700px;
+      margin: 0 auto;
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  p {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
   }
 }
 .navigation {
@@ -386,6 +444,9 @@ header {
         &:hover {
           color: $accent-color;
         }
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+        }
       }
       &:last-child a {
         padding-right: 0px;
@@ -402,6 +463,15 @@ header {
         &:hover {
           color: $accent-color;
         }
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin: 0;
       }
     }
   }
@@ -457,6 +527,21 @@ header {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.meet {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+
+  p {
+    text-align: justify;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
 /* ==========================================================================
 Social share buttons
 ========================================================================== */
@@ -485,14 +570,15 @@ Intro
 }
 
 #intro {
-  padding-top: 40px;
+  // padding-top: 40px;
+  padding-top: 0px;
   img {
     width: 100%;
     height: auto;
   }
 }
 #intro p {
-  text-align: center;
+  text-align: justify;
 }
 
 /* ==========================================================================
@@ -1220,4 +1306,10 @@ body.modal-open {
 }
 .dress-code button:hover {
   background-color: $accent-color-hover;
+}
+
+p,
+li {
+  color: var(--primary-color);
+  // font-weight: 800;
 }
