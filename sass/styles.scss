@@ -275,10 +275,13 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url("../img/hero-img.jpg") center center;
+  min-height: 266px;
+  height: 450px;
+  width: 140%;
+  background: url(../img/hero-img.jpg) right center;
   background-repeat: no-repeat;
-  // background-position-y: -130px;
+  background-position-y: 0px;
+  background-position-x: -75px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -286,8 +289,9 @@ Hero
   position: relative;
 
   .rsvp-btn {
-    color: #c67d48;
+    color: #fff;
     border-color: #c67d48;
+    background-color: #c67d48;
 
     @media screen and (min-width: 768px) {
       margin-top: -30rem;
@@ -297,15 +301,10 @@ Hero
   .rsvp-btn:hover,
   .rsvp-btn:focus {
     color: #fff;
-    border-color: #c67d48;
+    border-color: rgba(198, 125, 72, 0.7);
     background-color: #c67d48;
   }
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
   .down-arrow a {
     color: $txt-light;
   }
@@ -321,19 +320,50 @@ Hero
   }
   .hero-content {
     padding-top: 40%;
+    position: relative;
   }
   .hero-content img {
-    width: 75%;
-    margin-bottom: 12%;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 50%;
 
     @media screen and (min-width: 768px) {
       min-width: 0;
-      margin-top: -27px;
+      // margin-top: -27px;
+      margin-top: -220px;
+      position: relative;
+      top: unset;
+      left: unset;
+      width: 65%;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-top: -56px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-top: 30px;
     }
   }
 
   @media screen and (min-width: 768px) {
+    min-height: 610px;
+    height: 610px;
+    width: 100%;
+    background: url("../img/hero-img.jpg") center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
     background-position-y: -100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 750px;
+    height: 980px;
   }
 }
 .navigation {
@@ -1220,4 +1250,10 @@ body.modal-open {
 }
 .dress-code button:hover {
   background-color: $accent-color-hover;
+}
+
+p,
+li {
+  color: var(--primary-color);
+  // font-weight: 800;
 }
