@@ -344,7 +344,7 @@ Hero
     }
 
     @media screen and (min-width: 1440px) {
-      margin-top: 30px;
+      margin-top: 170px;
     }
   }
 
@@ -1145,6 +1145,30 @@ body.modal-open {
 
   perspective: 1000px;
   height: 400px;
+}
+
+.card-top {
+  background-color: var(--card-background);
+  border-radius: 15px;
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+
+  perspective: 1000px;
+}
+
+.row-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1400px) {
+    // flex-direction: row;
+    gap: 3rem;
+  }
 }
 
 .card-inner {
